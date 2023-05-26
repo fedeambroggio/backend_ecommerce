@@ -5,11 +5,12 @@ import {
     deleteCartById,
     getCartById
 } from "../controllers/carritos.controller.js";
+import { authenticateAndRefreshJWT } from "../middleware/authenticateAndRefreshJWT.js";
 const carritosRouter = Router();
 
-carritosRouter.get("/:id", getCartById);
-carritosRouter.post("/", addCart);
-carritosRouter.put("/:id", modifyCartById);
-carritosRouter.delete("/:id", deleteCartById);
+carritosRouter.get("/:id", authenticateAndRefreshJWT, getCartById);
+carritosRouter.post("/", authenticateAndRefreshJWT, addCart);
+carritosRouter.put("/:id", authenticateAndRefreshJWT, modifyCartById);
+carritosRouter.delete("/:id", authenticateAndRefreshJWT, deleteCartById);
 
 export default carritosRouter;

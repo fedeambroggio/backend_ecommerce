@@ -1,0 +1,6 @@
+{"level":"warn","message":"Usuario no autenticado","timestamp":"2023-05-26T16:47:12.001Z"}
+{"level":"warn","message":"El usuario no ha podido ser logueado: MongooseError: Operation `usuarios.find()` buffering timed out after 10000ms","timestamp":"2023-05-26T16:50:38.384Z"}
+{"level":"warn","message":"El usuario no ha podido ser logueado: MongooseError: Operation `usuarios.find()` buffering timed out after 10000ms","timestamp":"2023-05-26T16:51:45.745Z"}
+{"level":"warn","message":"Usuario no autenticado","timestamp":"2023-05-26T16:52:48.524Z"}
+{"level":"warn","message":"Usuario no autenticado","timestamp":"2023-05-26T16:54:12.379Z"}
+{"level":"warn","message":"El usuario no ha podido ser logueado: MongooseError: Operation `usuarios.find()` buffering timed out after 10000ms","timestamp":"2023-05-26T16:58:20.738Z"}

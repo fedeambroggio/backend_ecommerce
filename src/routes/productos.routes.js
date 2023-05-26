@@ -6,13 +6,14 @@ import {
     deleteProductById,
     modifyProductById,
 } from "../controllers/productos.controller.js";
+import { authenticateAndRefreshJWT } from "../middleware/authenticateAndRefreshJWT.js";
 const productosRouter = Router();
 
-productosRouter.get("/", getAllProducts);
-productosRouter.get("/:categoria", getProductByCategory);
+productosRouter.get("/", authenticateAndRefreshJWT, getAllProducts);
+productosRouter.get("/:categoria", authenticateAndRefreshJWT, getProductByCategory);
 
-productosRouter.post("/", addProduct);
-productosRouter.put("/:id", modifyProductById);
-productosRouter.delete("/:id", deleteProductById);
+productosRouter.post("/", authenticateAndRefreshJWT, addProduct);
+productosRouter.put("/:id", authenticateAndRefreshJWT, modifyProductById);
+productosRouter.delete("/:id", authenticateAndRefreshJWT, deleteProductById);
 
 export default productosRouter;
