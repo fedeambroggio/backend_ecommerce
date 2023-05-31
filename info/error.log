@@ -1,0 +1,9 @@
+{"level":"error","message":"Error al obtener los mensajes: TypeError: Cannot read property 'status' of undefined","timestamp":"2023-05-31T21:51:18.091Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: Cannot read property 'status' of undefined","timestamp":"2023-05-31T21:54:34.653Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: Cannot read property 'status' of undefined","timestamp":"2023-05-31T21:55:43.914Z"}
+{"level":"error","message":"Error al guardar el mensaje: TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.","timestamp":"2023-05-31T22:07:15.852Z"}
+{"level":"error","message":"Error al guardar el mensaje: TypeError: Found non-callable @@iterator","timestamp":"2023-05-31T22:12:05.989Z"}
+{"level":"error","message":"Error al guardar el mensaje: TypeError: Found non-callable @@iterator","timestamp":"2023-05-31T22:14:00.613Z"}
+{"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:16:43.396Z"}
+{"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:17:19.069Z"}
+{"level":"error","message":"Error al guardar el mensaje: ReferenceError: res is not defined","timestamp":"2023-05-31T22:18:06.956Z"}

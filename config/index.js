@@ -10,5 +10,5 @@ export const MONGO_URI = process.env.MONGO_URL || "mongodb://localhost:27017/Eco
 // export const DATABASE_TYPE = process.env.DATABASE_TYPE || "MONGO"; //Determine DAO from env
 export const DATABASE_TYPE = args['db'] || "MONGO"; //Determine DAO from CLI args
 export const SERVER_MODE = args['mode'] || "FORK"; 
-export const SESSION_LENGTH_MINUTES = args['session-length'] || 1; 
+export const SESSION_LENGTH_MINUTES = args['session-length'] || 10; 
 export const TOKEN_SECRET = process.env.TOKEN_SECRET

@@ -56,7 +56,7 @@ export const userLogin = async (req, res) => {
         let user = await usuariosRepository.find({
             email: { $eq: email },
         });
-        user = user[0]; //User data is receiven in array
+        user = user[0]; //User data is received in array
 
         if (user && (await bcrypt.compare(password, user.password))) {
             const token = jwt.sign({ user_id: user._id, email }, TOKEN_SECRET, {
@@ -66,10 +66,14 @@ export const userLogin = async (req, res) => {
             // save user token
             user.token = token;
 
-            // user
+            return res.redirect("/productos");
+            /*
+            //To test with postman
+
             return res
                 .status(201)
-                .json({ data: user, message: "Login existoso" });
+                .json({ data: user, message: "Login existoso" }); 
+            */
         }
 
         return res

@@ -5,6 +5,11 @@ import { logger } from './src/utils/logger.js';
 import {SERVER_MODE, PORT} from './config/index.js'
 import connectDatabase from "./src/database/index.js";
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /* import expressSession from 'express-session';
 import passport from 'passport';
 import {initPassport} from "./middleware/passport.js";
@@ -15,11 +20,12 @@ import appRouter from "./routes/app.routes.js";
 import apiRouter from "./routes/api.routes.js";
 import sessionRouter from "./routes/session.routes.js";
 import mensajesRouter from "./routes/mensajes.routes.js"; */
-
+import { initializeChatSocket } from './src/controllers/websocket.controller.js';
 
 import productosRoutes from "./src/routes/productos.routes.js";
 import carritosRoutes from "./src/routes/carritos.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
+import mensajesRouter from './src/routes/mensajes.routes.js';
 
 dotenv.config()
 
@@ -54,7 +60,13 @@ const startServer = () => {
     //Routes
     app.use("/productos", productosRoutes);
     app.use("/carrito", carritosRoutes);
+    app.use("/chat", mensajesRouter);
     app.use("/", authRoutes);
+    app.get('/', (req, res) => {
+        const filePath = path.join(__dirname, '/public/index.html');
+        console.log(filePath)
+        res.sendFile(filePath);
+    });
 
     const server = app.listen(PORT, () => {
         logger.log("info", `App listening on port ${PORT}`);
@@ -62,6 +74,9 @@ const startServer = () => {
     server.on("error", (err) => {
         logger.log("error", `Error al iniciar el servidor ${err}`);
     });
+
+    // Initialize chat socket
+    initializeChatSocket(server)
 };
 
 if (SERVER_MODE === "CLUSTER") {
