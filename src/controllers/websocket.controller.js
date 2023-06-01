@@ -23,8 +23,6 @@ const initializeChatSocket = (server) => {
             const response = await getAllMessages();
             const mensajes = response.data;
 
-            console.log(mensajes)
-
             socket.emit("all messages", mensajes);
         } catch (error) {
             logger.log({ level: "error", message: `Error al obtener los mensajes: ${error}` })

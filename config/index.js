@@ -11,4 +11,10 @@ export const MONGO_URI = process.env.MONGO_URL || "mongodb://localhost:27017/Eco
 export const DATABASE_TYPE = args['db'] || "MONGO"; //Determine DAO from CLI args
 export const SERVER_MODE = args['mode'] || "FORK"; 
 export const SESSION_LENGTH_MINUTES = args['session-length'] || 10; 
-export const TOKEN_SECRET = process.env.TOKEN_SECRET
+export const TOKEN_SECRET = process.env.TOKEN_SECRET;
+//Email config
+export const SMTP_HOST = process.env.SMTP_HOST;
+export const SMTP_PORT = process.env.SMTP_PORT;
+export const SMTP_USER = process.env.SMTP_USER;
+export const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL;

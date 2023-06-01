@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import {MONGO_URI} from "../../config/index.js";
+import { MONGO_URI } from "../../config/index.js";
+import { logger } from "../utils/logger.js";
 
 async function init() {
   mongoose.set("strictQuery", false);
@@ -7,4 +8,4 @@ async function init() {
 }
 
 
-export default () => init().catch(err => console.log(err));
+export default () => init().catch(err => logger.log("error", `Error al conectar con mongo: ${err}`));

@@ -26,6 +26,7 @@ import productosRoutes from "./src/routes/productos.routes.js";
 import carritosRoutes from "./src/routes/carritos.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
 import mensajesRouter from './src/routes/mensajes.routes.js';
+import ordenesRouter from './src/routes/ordenes.routes.js';
 
 dotenv.config()
 
@@ -61,10 +62,10 @@ const startServer = () => {
     app.use("/productos", productosRoutes);
     app.use("/carrito", carritosRoutes);
     app.use("/chat", mensajesRouter);
+    app.use("/ordenes", ordenesRouter);
     app.use("/", authRoutes);
     app.get('/', (req, res) => {
         const filePath = path.join(__dirname, '/public/index.html');
-        console.log(filePath)
         res.sendFile(filePath);
     });
 

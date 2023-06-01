@@ -54,8 +54,6 @@ export const modifyCartById = async (req, res) => {
     const { email, direccion, items } = req.body;
     const fecha = Date.now()
 
-    console.log(id, email, direccion, items, fecha)
-
     const carritoUpdated = await carritosRepository.update(id, {
         email, direccion, items, fecha
     });
