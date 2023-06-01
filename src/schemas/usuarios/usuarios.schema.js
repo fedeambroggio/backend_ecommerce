@@ -11,6 +11,14 @@ export const UsuariosSchema = new Schema({
         type: String,
         required: true,
     },
-  });
+    name: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    },
+});
 
 export const UsuariosModel = model("usuarios", UsuariosSchema);

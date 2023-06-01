@@ -17,3 +17,6 @@
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:16:43.396Z"}
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:17:19.069Z"}
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: res is not defined","timestamp":"2023-05-31T22:18:06.956Z"}
+{"level":"warn","message":"El usuario no ha podido ser registrado: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","timestamp":"2023-06-01T21:25:30.752Z"}
+{"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: ordenes is not defined","timestamp":"2023-06-01T21:26:09.728Z"}
+{"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: sendEmail is not defined","timestamp":"2023-06-01T21:28:42.791Z"}
