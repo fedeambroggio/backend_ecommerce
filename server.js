@@ -27,6 +27,7 @@ import carritosRoutes from "./src/routes/carritos.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
 import mensajesRouter from './src/routes/mensajes.routes.js';
 import ordenesRouter from './src/routes/ordenes.routes.js';
+import viewsRouter from './src/routes/views.routes.js';
 
 dotenv.config()
 
@@ -53,6 +54,15 @@ const startServer = () => {
     app.use(passport.initialize());
     app.use(passport.session()); */
 
+    // Configuración de Pug
+    app.set('view engine', 'pug');
+    app.set('views', path.join(__dirname, 'src/views'));
+
+    // Configuración del motor de plantillas EJS
+    app.set("view engine", "ejs");
+    app.set("views", path.join(__dirname, "src/views"));
+
+    //Informacion de la ruta solicitada
     app.use((req, res, next) => {
         logger.log({level: "info", message: `Received ${req.method} request to ${req.path}`})
         next();
@@ -63,7 +73,15 @@ const startServer = () => {
     app.use("/carrito", carritosRoutes);
     app.use("/chat", mensajesRouter);
     app.use("/ordenes", ordenesRouter);
+    app.use("/api", viewsRouter);
     app.use("/", authRoutes);
+
+    //Manejo de errores en cualquier endpoint
+    app.use((err, req, res, next) => {
+        res.status(500).render("error", { error: err });
+    });
+
+    //Test
     app.get('/', (req, res) => {
         const filePath = path.join(__dirname, '/public/index.html');
         res.sendFile(filePath);

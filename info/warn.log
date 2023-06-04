@@ -20,3 +20,4 @@
 {"level":"warn","message":"El usuario no ha podido ser registrado: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","timestamp":"2023-06-01T21:25:30.752Z"}
 {"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: ordenes is not defined","timestamp":"2023-06-01T21:26:09.728Z"}
 {"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: sendEmail is not defined","timestamp":"2023-06-01T21:28:42.791Z"}
+{"level":"warn","message":"La vista de configuración no ha podido ser renderizada: ReferenceError: PORT is not defined","timestamp":"2023-06-04T23:18:15.701Z"}

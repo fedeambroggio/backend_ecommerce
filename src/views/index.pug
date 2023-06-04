@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title Configuración del servidor
+    style
+      | body {
+      |   font-family: Arial, sans-serif;
+      |   margin: 20px;
+      | }
+      | h1 {
+      |   color: #337ab7;
+      | }
+      | table {
+      |   border-collapse: collapse;
+      |   width: 100%;
+      | }
+      | th, td {
+      |   border: 1px solid #ddd;
+      |   padding: 8px;
+      | }
+      | th {
+      |   background-color: #f2f2f2;
+      | }
+  body
+    h1(style="color: #337ab7;") Configuración del servidor
+    p El servidor está configurado con los siguientes valores:
+    table
+      tr
+        th Parámetro
+        th Valor
+      tr
+        td Puerto
+        td #{port}
+      tr
+        td Base URL
+        td #{baseUrl}
+      tr
+        td Modo del servidor
+        td #{serverMode}
+      tr
+        td URI de MongoDB
+        td #{mongoUri}
+      tr
+        td Tipo de base de datos
+        td #{databaseType}
+      tr
+        td Duración de la sesión en minutos
+        td #{sessionLengthMinutes}
+      tr
+        td Token secreto
+        td #{tokenSecret}
+      tr
+        td SMTP Host
+        td #{smtpHost}
+      tr
+        td SMTP Puerto
+        td #{smtpPort}
+      tr
+        td SMTP Usuario
+        td #{smtpUser}
+      tr
+        td SMTP Contraseña
+        td #{smtpPassword}
+      tr
+        td Email del administrador
+        td #{adminEmail}
