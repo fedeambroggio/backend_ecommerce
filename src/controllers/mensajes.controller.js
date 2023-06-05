@@ -3,8 +3,12 @@ import { mensajesRepository } from "../schemas/mensajes/mensajes.repository.js";
 export const getAllMessages = async (req, res, next) => {
     try {
         const mensajes = await mensajesRepository.find();
-        res.status(200).json({ data: mensajes });
+        if (res)
+            res.status(200).json({ data: mensajes });
+        else
+            return { data: mensajes }
     } catch (error) {
+        console.log("error", error)
         next(error);
     }
 };

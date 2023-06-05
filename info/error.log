@@ -7,3 +7,15 @@
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:16:43.396Z"}
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: Cannot access 'messageDTO' before initialization","timestamp":"2023-05-31T22:17:19.069Z"}
 {"level":"error","message":"Error al guardar el mensaje: ReferenceError: res is not defined","timestamp":"2023-05-31T22:18:06.956Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:07:35.609Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:20:16.200Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:20:27.861Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:22:21.290Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:22:56.680Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:23:19.365Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:24:04.164Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:28:48.753Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:29:36.249Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:30:24.622Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:30:49.502Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:31:47.897Z"}

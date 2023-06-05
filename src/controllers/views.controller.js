@@ -11,12 +11,13 @@ import {
     SMTP_PASSWORD,
     SMTP_PORT,
     SMTP_USER,
-    TOKEN_SECRET
+    TOKEN_SECRET,
+    VIEW_ENGINE
 } from '../../config/index.js'; 
 
 export const showConfiguration = async (req, res) => {
     try {
-        res.render("index", {
+        res.render(`${VIEW_ENGINE.toLowerCase()}/configuration`, {
             port: PORT,
             baseUrl: BASE_URL,
             serverMode: SERVER_MODE,
@@ -37,3 +38,15 @@ export const showConfiguration = async (req, res) => {
         });
     }
 };
+
+export const showChat = async (req, res) => {
+    try {
+        res.render(`${VIEW_ENGINE.toLowerCase()}/chat`, { mensajes: [{'cuerpo': 'hola', 'email': 'fede'}]});
+    } catch (err) {
+        logger.log({ level: "warn", message: `La vista de chat no ha podido ser renderizada: ${err}` });
+        return res.status(500).json({
+            message: `La vista de chat no ha podido ser renderizada: ${err}`,
+        });
+    }
+};
+

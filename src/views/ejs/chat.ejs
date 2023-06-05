@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cliente Socket</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            #messages {
+                background-color: #f2f2f2;
+                padding: 10px;
+                border-radius: 5px;
+                height: 300px;
+                overflow-y: scroll;
+            }
+
+            .chat-line {
+                margin-bottom: 10px;
+            }
+
+            .chat-line .email {
+                font-weight: bold;
+            }
+
+            .chat-line .cuerpo {
+                margin-left: 10px;
+            }
+
+            .chat-line .fecha {
+                font-size: 12px;
+                color: #888888;
+                margin-left: 10px;
+            }
+
+            #messageForm {
+                margin-top: 20px;
+            }
+
+            #messageForm input[type="text"] {
+                padding: 5px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                margin-right: 10px;
+            }
+
+            #messageForm button[type="submit"] {
+                padding: 5px 10px;
+                background-color: #337ab7;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            #messageForm button[type="submit"]:hover {
+                background-color: #23527c;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    </head>
+    <body>
+        <div id="messages">
+            <% mensajes.forEach(function(mensaje) { %>
+                <div class="chat-line">
+                    <span class="email"><%= mensaje.email %></span>
+                    <span class="cuerpo"><%= mensaje.cuerpo %></span>
+                    <span class="fecha"><%= mensaje.fecha %></span>
+                </div>
+            <% }); %>
+        </div>
+
+        <form id="messageForm">
+            <input type="text" id="emailInput" placeholder="Email" />
+            <input type="text" id="cuerpoInput" placeholder="Mensaje" />
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+
+        <script>
+            // Conectar al servidor WebSocket
+            const socket = io();
+
+            socket.on("all messages", (messages) => {
+                const messagesList = document.querySelector("#messages");
+                messages.forEach((message) => {
+                    const chatLine = document.createElement("div");
+                    chatLine.classList.add("chat-line");
+                    const emailSpan = document.createElement("span");
+                    emailSpan.classList.add("email");
+                    emailSpan.textContent = message.email;
+                    const cuerpoSpan = document.createElement("span");
+                    cuerpoSpan.classList.add("cuerpo");
+                    cuerpoSpan.textContent = message.cuerpo;
+                    const fechaSpan = document.createElement("span");
+                    fechaSpan.classList.add("fecha");
+                    fechaSpan.textContent = message.fecha;
+                    chatLine.appendChild(emailSpan);
+                    chatLine.appendChild(cuerpoSpan);
+                    chatLine.appendChild(fechaSpan);
+                    messagesList.appendChild(chatLine);
+                });
+                messagesList.scrollTop = messagesList.scrollHeight;
+            });
+
+            socket.on("chat message", (message) => {
+                const messagesList = document.querySelector("#messages");
+                const chatLine = document.createElement("div");
+                chatLine.classList.add("chat-line");
+                const emailSpan = document.createElement("span");
+                emailSpan.classList.add("email");
+                emailSpan.textContent = message.email;
+                const cuerpoSpan = document.createElement("span");
+                cuerpoSpan.classList.add("cuerpo");
+                cuerpoSpan.textContent = message.cuerpo;
+                const fechaSpan = document.createElement("span");
+                fechaSpan.classList.add("fecha");
+                fechaSpan.textContent = message.fecha;
+                chatLine.appendChild(emailSpan);
+                chatLine.appendChild(cuerpoSpan);
+                chatLine.appendChild(fechaSpan);
+                messagesList.appendChild(chatLine);
+                messagesList.scrollTop = messagesList.scrollHeight;
+            });
+
+            const messageForm = document.getElementById("messageForm");
+            messageForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const email = document.querySelector("#emailInput").value;
+                const cuerpo = document.querySelector("#cuerpoInput").value;
+                const message = {
+                    email: email,
+                    cuerpo: cuerpo,
+                };
+                socket.emit("chat message", message);
+                document.querySelector("#emailInput").value = "";
+                document.querySelector("#cuerpoInput").value = "";
+            });
+        </script>
+    </body>
+</html>

@@ -21,3 +21,16 @@
 {"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: ordenes is not defined","timestamp":"2023-06-01T21:26:09.728Z"}
 {"level":"warn","message":"El usuario no ha podido ser registrado: ReferenceError: sendEmail is not defined","timestamp":"2023-06-01T21:28:42.791Z"}
 {"level":"warn","message":"La vista de configuración no ha podido ser renderizada: ReferenceError: PORT is not defined","timestamp":"2023-06-04T23:18:15.701Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:07:35.609Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:20:16.200Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:20:27.861Z"}
+{"level":"warn","message":"La vista de chat no ha podido ser renderizada: Error: Module \"handlebars\" does not provide a view engine.","timestamp":"2023-06-05T00:20:32.035Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:22:21.290Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:22:56.680Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:23:19.365Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:24:04.164Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:28:48.753Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:29:36.249Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:30:24.622Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:30:49.502Z"}
+{"level":"error","message":"Error al obtener los mensajes: TypeError: next is not a function","timestamp":"2023-06-05T00:31:47.897Z"}

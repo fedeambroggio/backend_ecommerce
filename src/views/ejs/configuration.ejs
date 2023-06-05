@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuración del servidor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        color: #337ab7;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: #337ab7;">Configuración del servidor</h1>
+    <p>El servidor está configurado con los siguientes valores:</p>
+    <table>
+      <tr>
+        <th>Parámetro</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>Puerto</td>
+        <td><%= port %></td>
+      </tr>
+      <tr>
+        <td>Base URL</td>
+        <td><%= baseUrl %></td>
+      </tr>
+      <tr>
+        <td>Modo del servidor</td>
+        <td><%= serverMode %></td>
+      </tr>
+      <tr>
+        <td>URI de MongoDB</td>
+        <td><%= mongoUri %></td>
+      </tr>
+      <tr>
+        <td>Tipo de base de datos</td>
+        <td><%= databaseType %></td>
+      </tr>
+      <tr>
+        <td>Duración de la sesión en minutos</td>
+        <td><%= sessionLengthMinutes %></td>
+      </tr>
+      <tr>
+        <td>Token secreto</td>
+        <td><%= tokenSecret %></td>
+      </tr>
+      <tr>
+        <td>SMTP Host</td>
+        <td><%= smtpHost %></td>
+      </tr>
+      <tr>
+        <td>SMTP Puerto</td>
+        <td><%= smtpPort %></td>
+      </tr>
+      <tr>
+        <td>SMTP Usuario</td>
+        <td><%= smtpUser %></td>
+      </tr>
+      <tr>
+        <td>SMTP Contraseña</td>
+        <td><%= smtpPassword %></td>
+      </tr>
+      <tr>
+        <td>Email del administrador</td>
+        <td><%= adminEmail %></td>
+      </tr>
+    </table>
+  </body>
+</html>
