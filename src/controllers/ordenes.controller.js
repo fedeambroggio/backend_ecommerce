@@ -37,7 +37,7 @@ export const addOrder = async (req, res, next) => {
             const itemsHTML = ordenes.items
                 .map(
                     (item) =>
-                        `<li>Item ID: ${item.id}. Cantidad: ${item.cantidad}</li>`
+                        `<li>Item ID: ${item.id}. Cantidad: ${item.cantidad}. Precio: ${item.precio}</li>`
                 )
                 .join("");
 

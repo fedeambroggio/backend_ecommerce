@@ -6,6 +6,5 @@ const viewsRouter = Router();
 
 
 viewsRouter.get("/configuracion", showConfiguration);
-// viewsRouter.post("/mensajes", userRegister);
 
 export default viewsRouter;
