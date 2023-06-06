@@ -10,7 +10,6 @@ const checkIfTokenNeedsToBeRefreshed = (user) => {
     const tokenExpirationTimestamp = user.exp;
 
     const timeRemaining = tokenExpirationTimestamp - currentTimestamp; // Tiempo restante en segundos
-    console.log('timeRemaining', timeRemaining)
     if (timeRemaining < (SESSION_LENGTH_MINUTES * 60 * (PORCENTAJE_TIEMPO_RESTANTE_PARA_RENOVACION / 100))) {
         return true;
     } else {

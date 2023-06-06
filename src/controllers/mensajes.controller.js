@@ -8,7 +8,6 @@ export const getAllMessages = async (req, res, next) => {
         else
             return { data: mensajes }
     } catch (error) {
-        console.log("error", error)
         next(error);
     }
 };
