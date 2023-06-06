@@ -56,7 +56,7 @@ const startServer = () => {
     app.use("/carrito", carritosRoutes);
     app.use("/chat", mensajesRouter);
     app.use("/ordenes", ordenesRouter);
-    app.use("/api", viewsRouter);
+    app.use("/", viewsRouter);
     app.use("/", authRoutes);
 
     //Manejo de errores en cualquier endpoint

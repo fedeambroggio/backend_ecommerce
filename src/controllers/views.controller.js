@@ -50,3 +50,14 @@ export const showChat = async (req, res) => {
     }
 };
 
+export const showIndex = async (req, res) => {
+    try {
+        res.render(`${VIEW_ENGINE.toLowerCase()}/index`);
+    } catch (err) {
+        logger.log({ level: "warn", message: `La vista index no ha podido ser renderizada: ${err}` });
+        return res.status(500).json({
+            message: `La vista index no ha podido ser renderizada: ${err}`,
+        });
+    }
+};
+

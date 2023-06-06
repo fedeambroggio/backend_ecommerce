@@ -1,11 +1,13 @@
 import { Router } from "express";
 import {
     showConfiguration,
-    showChat
+    showChat,
+    showIndex
 } from "../controllers/views.controller.js";
 const viewsRouter = Router();
 
 
+viewsRouter.get("/", showIndex);
 viewsRouter.get("/configuracion", showConfiguration);
 viewsRouter.get("/chat", showChat);
 
