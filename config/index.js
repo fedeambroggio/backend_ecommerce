@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
+import { logger } from "../src/utils/logger.js";
 dotenv.config();
 
-let config;
 
-console.log(process.env.ENVIRONMENT)
+let config;
 
 if (process.env.ENVIRONMENT === "production") {
     config = await import("./production.js").then((module) => module.default);
@@ -11,7 +11,10 @@ if (process.env.ENVIRONMENT === "production") {
     config = await import("./development.js").then((module) => module.default);
 }
 
-console.log(config)
+logger.log({
+    level: "info",
+    message: `Running on ${process.env.ENVIRONMENT}`,
+});
 
 export const {
     PORT,
