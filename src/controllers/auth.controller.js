@@ -110,7 +110,7 @@ export const userLogin = async (req, res, next) => {
 
         return res
             .status(400)
-            .json({ data: user, message: "Credenciales no validas" });
+            .json({ data: [], message: "Credenciales no validas" });
     } catch (error) {
         next(error);
     }

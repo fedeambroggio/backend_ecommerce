@@ -41,7 +41,7 @@ export const showConfiguration = async (req, res) => {
 
 export const showChat = async (req, res) => {
     try {
-        res.render(`${VIEW_ENGINE.toLowerCase()}/chat`, { mensajes: [{'cuerpo': 'hola', 'email': 'fede'}]});
+        res.render(`${VIEW_ENGINE.toLowerCase()}/chat`, { mensajes: []});
     } catch (err) {
         logger.log({ level: "warn", message: `La vista de chat no ha podido ser renderizada: ${err}` });
         return res.status(500).json({

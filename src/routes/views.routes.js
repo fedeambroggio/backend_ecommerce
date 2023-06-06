@@ -9,6 +9,6 @@ const viewsRouter = Router();
 
 viewsRouter.get("/", showIndex);
 viewsRouter.get("/configuracion", showConfiguration);
-viewsRouter.get("/chat", showChat);
+viewsRouter.get("/web-chat", showChat);
 
 export default viewsRouter;
